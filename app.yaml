@@ -1,0 +1,37 @@
+application: emomentumintranet-1009
+version: 2
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /assets/js/*
+  static_dir: assets/js
+- url: /assets/bower_components/*
+  static_dir: assets/bower_components
+  
+- url: /assets/css/*
+  static_dir: assets/css
+  
+- url: /assets/fonts/*
+  static_dir: assets/fonts
+  
+- url: /adminAssets/js/*
+  static_dir: adminassets/js
+  
+- url: /AdminAssets/fonts/*
+  static_dir: AdminAssets/fonts
+
+- url: /AdminAssets/css/*
+  static_dir: AdminAssets/css
+
+- url: /assets/images/*
+  static_dir: assets/images
+  
+- url: /AdminAssets/tinymce/*
+  static_dir: AdminAssets/tinymce
+
+- url: /
+  script: index.php
+
+- url: /(.+)
+  script: index.php
