@@ -21,7 +21,7 @@
 
 						<div class="nav-holder collapse navbar-collapse">
 							<ul class="nav navbar-nav pull-right">
-								<li><?php echo anchor('home','Home')?></li>
+								<li><?php echo anchor('Home','Home')?></li>
 								<li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Administration<b class="caret"></b></a>
 									<ul class="dropdown-menu">
 										<li><?php echo anchor('Departments/directors','Directors')?></li>
@@ -52,7 +52,7 @@
 										<li><?php echo anchor('home/upcoming_events/4','Upcoming Events')?></li>
 									</ul>
 								</li>
-								<li><?php echo anchor('blog','Innovate')?></li>
+								<li><?php echo anchor('Innovate','Innovate')?></li>
 							</ul>
 						</div><!-- end of nav holder-->
 					</div><!-- end of main nav-->

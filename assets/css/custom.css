@@ -79,3 +79,73 @@ position: absolute;
 	color:#818181;
 	font-weight: 500;
 }
+
+.search-tab{
+    background-color: #3E59A8;
+    list-style: none;
+    height: 60px;
+
+}
+
+.search-tab li{
+    float: left;
+    margin-left: 40px;
+     margin-top: 15px;
+     color: #fff;
+
+}
+
+.post {
+    margin-top: 30px;
+}
+
+.post li{
+    list-style-position: center;
+    list-style: none;
+}
+hr{
+    background: #3E59A8;
+}
+.post button{
+    background: #f7c218;
+}
+}
+
+.content-department .Team {
+    background: #fff;
+}
+.content-department .caption {
+    background: #f7c218;
+}
+
+.team-documents .contract .head {
+    background: #13a54a;
+    color: #fff;
+}
+
+.single-post-content img{
+    padding: 0 0 0 0px;
+
+
+}
+.single-post-content .caption .time-date{
+    background: #13a54a;
+    height: 120px;
+    width: 150px;
+    padding: 0 0 0 0px;
+
+
+}
+.single-post-content h3{
+    margin-left: 20px;
+    color: #3E59A8;
+    margin-top: 50px;
+}
+.sorting
+{
+	line-height: 18px;
+    font-size: 12px;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+    margin: 0px 1.5%;
+}
