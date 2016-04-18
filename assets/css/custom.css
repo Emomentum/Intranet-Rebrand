@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+body{
+	background-color: #F1F1F1;
+	font-family: 'Comfortaa', cursive;
+}
+.body_holder{
+	width: 88%;
+    margin-top: 33px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F1F1F1;
+    font-family: 'Comfortaa', cursive;
+}
+img.logo{
+	width:232px;
+}
+.panel_announcement{
+	 background: url('../images/nic.gif') no-repeat center center; 
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
+    height:55%;
+    color:#ffffff;
+}
+.heading-announcement{
+    background-color: #12A54A;
+}
+.panel_communications{
+	 background: url('../images/communications.jpg') no-repeat center center; 
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
+    height:55%;
+    color:#ffffff;
+}
+.heading-communications{
+    background-color: #3E59A8;
+}
+.panel_upcoming{
+	 background: url('../images/upcoming.jpg') no-repeat center center; 
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
+    height:55%;
+    color:#ffffff;
+}
+.heading-upcoming{
+    background-color: #3E59A8;
+}
+.panel_news{
+	 background: url('../images/news.jpg') no-repeat center center; 
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
+    height:55%;
+    color:#ffffff;
+}
+.heading-news{
+    background-color: #3E59A8;
+}
+.processes{
+    background-color:#3E59A8;
+    color:#ffffff;
+}
+.processes-list{
+    margin: 6px;
+    padding:10px
+}
+.heading-processes{
+    background-color: #B6B6B6;
+}
+@media (min-width: 768px){
+.navbar-nav {
+position: absolute;
+    bottom: 0px;
+    left: 358px;
+}
+}
+.navbar-nav a{
+	color:#818181;
+	font-weight: 500;
+}
+
+.search-tab{
+    background-color: #3E59A8;
+    list-style: none;
+    height: 60px;
+
+}
+.search-tab li{
+    float: left;
+    margin-left: 40px;
+     margin-top: 15px;
+     color: #fff;
+
+}
+
+.post {
+    margin-top: 30px;
+}
+
+.post li{
+    list-style-position: center;
+    list-style: none;
+}
+hr{
+    background: #3E59A8;
+}
+.post button{
+    background: #f7c218;
+}
+}
+
+.content-department .Team {
+    background: #fff;
+}
+.content-department .caption {
+    background: #f7c218;
+}
+
+.team-documents .contract .head {
+    background: #13a54a;
+    color: #fff;
+}
+
+.single-post-content img{
+    padding: 0 0 0 0px;
+
+
+}
+.single-post-content .caption .time-date{
+    background: #13a54a;
+    height: 120px;
+    width: 150px;
+    padding: 0 0 0 0px;
+
+
+}
+.single-post-content h3{
+    margin-left: 20px;
+    color: #3E59A8;
+    margin-top: 50px;
+}
+.sorting
+{
+	line-height: 18px;
+    font-size: 12px;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+    margin: 0px 1.5%;
+}

@@ -1,0 +1,1 @@
+<script type="text/javascript" src="<?php echo base_url(); ?>assets2/js/jquery.jstree.js"></script>
