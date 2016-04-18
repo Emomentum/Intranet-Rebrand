@@ -25,7 +25,7 @@ img.logo{
     color:#ffffff;
 }
 .heading-announcement{
-    background-color: #12A54A;
+    background-color: #151B8D;
 }
 .panel_communications{
 	 background: url('../images/communications.jpg') no-repeat center center; 
@@ -37,7 +37,7 @@ img.logo{
     color:#ffffff;
 }
 .heading-communications{
-    background-color: #3E59A8;
+    background-color: #151B8D;
 }
 .panel_upcoming{
 	 background: url('../images/upcoming.jpg') no-repeat center center; 
@@ -49,10 +49,10 @@ img.logo{
     color:#ffffff;
 }
 .heading-upcoming{
-    background-color: #3E59A8;
+    background-color: #151B8D;
 }
 .panel_news{
-	 background: url('../images/news.jpg') no-repeat center center; 
+	/* background: url('../images/news.jpg') no-repeat center center; */
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -61,18 +61,22 @@ img.logo{
     color:#ffffff;
 }
 .heading-news{
-    background-color: #3E59A8;
+    /*background-color: #848482;*/
+    background-color: #15317E;
 }
 .processes{
-    background-color:#3E59A8;
+    /*background-color:#3E59A8;*/
+    background-color:#848482;
     color:#ffffff;
 }
 .processes-list{
     margin: 6px;
-    padding:10px
+    padding:10px;
+    background-color:#848482;
 }
 .heading-processes{
-    background-color: #B6B6B6;
+    /*background-color: #B6B6B6;*/
+    background-color: #151B8D;
 }
 @media (min-width: 768px){
 .navbar-nav {
