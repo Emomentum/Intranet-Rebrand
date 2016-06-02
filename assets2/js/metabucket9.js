@@ -75,6 +75,7 @@ $(function() {
        									   else{
        									   	album.innerHTML = album.innerHTML + '<div class="col-sm-4 col-md-4 contract"><div class="panel panel-success"><div class="panel-heading head"style="background-color:#12A54A"><h3 class="panel-title "><font color="#ffffff">'+folderdata[0].name+'</font></h3></div><div class="panel-body"></div><ul id = "document_list" class="list-group" style = "max-height:184px;overflow:auto;">';
        									   	var document_list = document.getElementById('document_list');
+											var counter = 0;
        									   	for(var i= 1;i<=noofitems;i++){
        									   		
        									   		var document_name = folderdata[i].name.replace(folderdata[0].name, "");
@@ -88,11 +89,18 @@ $(function() {
 																 url:      "https://www.googleapis.com/storage/v1/b/emomentum_projects_and_consultancy/o?delimiter=&prefix="+folderdata[0].name + document_name+"&key=AIzaSyBc2oN4JLbO8XD3RG3Ey7aFzYl_uXYQgVQ",
 																 dataType: "json",
 																 success: function(data){
+																	 counter++;
 																	 var folderdata2 = data.items;
-																	 var noofitems2 = folderdata2.length;
-																	 console.log(folderdata2[0].name);
-																	 document_list.innerHTML = document_list.innerHTML + '<li class="list-group-item"><a style = "color:#000;padding:0px;"href = "https://storage.googleapis.com/emomentum_projects_and_consultancy/'+folderdata2[0].name+'">'+folderdata2[0].name+'</a></li>';
-																	 
+																	 var data_items = folderdata2[0].name;
+																	 var lastChar = data_items[data_items.length -1];
+																	 if(lastChar == '/'){
+																		  $(document_list).append('<li style="background-color:#12A54A" class="list-group-item">'+data_items+'</li>');
+																	 }
+																	 else{
+																	 $(document_list).append('<li class="list-group-item">'+'<a id = "linkTest'+counter+'" style = "color:#000;padding:0px; href = "">'+data_items+'</a></li>');
+																	 var link2 = '#linkTest'+counter;
+																	  $(link2).attr("href", "https://storage.googleapis.com/emomentum_projects_and_consultancy/"+data_items);
+																 }
 																 }
 															});
 												}

@@ -80,7 +80,7 @@
 								$this->load->view('Admin/includes/risk_nav');
 
 							}
-							elseif($useremail ==  'test@emomentum-interactive.com' || $useremail == 'grace.mureithi@emomentum-interactive.com' || $useremail == 'kingsley.amaitsa@emomentum-interactive.com' || $useremail == 'david.odhiambo@emomentum-interactive.com' || $useremail == 'bryan.murithi@emomentum-interactive.com'){
+							elseif($useremail ==  'alex.mungai@emomentum-interactive.com' || $useremail == 'grace.mureithi@emomentum-interactive.com' || $useremail == 'kingsley.amaitsa@emomentum-interactive.com' || $useremail == 'david.odhiambo@emomentum-interactive.com' || $useremail == 'bryan.murithi@emomentum-interactive.com'){
 								 
 								 $this->load->view('Admin/includes/admin_nav');	   
 				

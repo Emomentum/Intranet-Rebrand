@@ -25,7 +25,6 @@ li a span {
     margin: 0 auto;
 }
 li a:hover {
-    background-color: #3E59A8;
 	color:#ffffff;
 	text-decoration:none;
 	
@@ -49,7 +48,7 @@ li a:hover:after {
 </head>
 <body style="background-color:#f1f1f1;">	
 <?php
-	    if($this->session->userdata('access_level')==FALSE){
+	    if($this->session->userdata('email')==FALSE){
 
 	    $this->load->view('login');
 				}
@@ -67,15 +66,28 @@ li a:hover:after {
 <?php $this->load->view('includes/nav');?>		
 
 <div class="row content-department">
-  <div class="col-sm-4 col-md-3">
+  <div class="col-sm-4 col-md-3" style = "box-shadow: 0px 0px 18px 3px #888888;">
     
   
     <h4>Team Targets</h4>
  
   <div class="panel-body">
-  <ul>
-  <li>Coming Soon</li>
-  </ul>
+  <ol>
+      <li>DEBTORS AGEING ANALYSIS
+	        <ol style = "list-style-type: lower-alpha;">
+                <li>Receivables Ratio 6 days</li>
+	             <li>Collection Days 60 days</li>
+            </ol>
+      </li>
+	<li>CREDITORS AGEING ANALYSIS
+	     <ol style = "list-style-type: lower-alpha;">
+             <li>Payables Ratio 6 days</li>
+	         <li>Payables Day 6 days</li>
+        </ol>
+      </li>
+	<li>AMOUNT TO BE COLLECTED MOTHLY $ 200,000</li>
+
+  </ol>
    </div>
 
 

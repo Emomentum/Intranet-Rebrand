@@ -60,7 +60,7 @@ $(function() {
                       'attr': {'gcs_id': prefix},
                       'state': 'closed'});
 					  var album_name = prefix.replace('/','');
-					  album.innerHTML = album.innerHTML + "<div style = 'float:left;width:100px;padding:20px;margin:0px 20px 0px 0px;text-align:center;'><a href = 'gallery/album/"+album_name+"'><img src = 'http://emomentum_extension.storage.googleapis.com/folder.png' width = '80'/>"+album_name+"</div>";
+					  album.innerHTML = album.innerHTML + "<div style = 'float:left;width:171px;padding:20px;margin:0px 20px 0px 0px;text-align:center;'><a href = 'gallery/album/"+album_name+"'><img src = 'http://emomentum_extension.storage.googleapis.com/folder.png' width = '150'/>"+album_name+"</div>";
 	 
 	 }
     }

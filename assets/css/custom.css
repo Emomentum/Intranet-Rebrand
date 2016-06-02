@@ -158,3 +158,6 @@ hr{
     text-transform: uppercase;
     margin: 0px 1.5%;
 }
+ol{
+	    padding-left: 0px;
+}

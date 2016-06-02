@@ -35,9 +35,10 @@ class Check_credentials extends CI_Controller {
 				$sess_array = array('email' => $row->Email,'access_level' => $row->permission_id,'username'=>$row->username);
 				$this->session->set_userdata($sess_array);
                 array_push($permissions,$row->permission_id);
+			    redirect('home');
 			}
-            if($permissions[0] == '1'){
-                redirect('home');
+           /* if($permissions[0] == '1'){
+             
             }
             elseif ($permissions[0] == '2'){
                 redirect('home');
@@ -47,7 +48,7 @@ class Check_credentials extends CI_Controller {
             }
 			 elseif ($permissions[0] == '3'){
                 redirect('home');
-            }
+            }*/
       return TRUE;
 		}
 		else

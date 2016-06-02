@@ -378,7 +378,7 @@ public function departments()
 			$email = $this->session->userdata('email');
 			$this->db->update('team',array('password'=>$password));
 			$this->db->where(array('email ='=> $email));
-			$this->session->set_flashdata('change_successfull','<div class="alert alert-success">
+			$this->session->set_flashdata('change_successful','<div class="alert alert-success">
                                                                     <a href="#" class="close" data-dismiss="alert">&times;</a>
                                                                     Password Change successful.Please login to access the Intranet
                                                                  </div>

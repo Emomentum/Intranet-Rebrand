@@ -67,19 +67,19 @@ li a:hover:after {
 <?php $this->load->view('includes/nav');?>		
 
 <div class="row content-department">
-  <div class="col-sm-4 col-md-3">
+<div class="col-sm-4 col-md-3" style = "box-shadow: 0px 0px 18px 3px #888888;">
     
   
     <h4>Team Targets</h4>
  
   <div class="panel-body">
-  <ul>
-  <li>Coming Soon</li>
-  </ul>
+      <ol>
+          <li>STAFF ATTRITION PER ANNUM 5% </li>
+          <li>LEAVE DISCREPANCY PER ANNUM 17%</li>
+      </ol>
    </div>
+    </div><!--first col end-->
 
-
-  </div><!--first col end-->
 <?php
                           foreach ($employee as $employee):
                           ?>   

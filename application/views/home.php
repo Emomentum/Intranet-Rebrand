@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/custom.css">
 	<script type="text/javascript" src="<?php echo base_url();?>assets/js/jssor.slider.min.js"></script>
@@ -9,7 +10,7 @@
         jssor_1_slider_init = function() {
             
             var jssor_1_SlideshowTransitions = [
-              {$Duration:1200,$Opacity:2}
+              {$Duration:3600,$Opacity:2}
             ];
             
             var jssor_1_options = {
@@ -106,7 +107,7 @@
 </head>
 <body>	
 	<?php
-	    if($this->session->userdata('access_level')==FALSE){
+	    if($this->session->userdata('email')== FALSE){
 
 	    $this->load->view('login');
 				}
@@ -287,7 +288,7 @@
                             News Feeds
                         </div>
 
-        <div id="jssor_1" style="position: relative; margin: 0 auto; top: -3px; left: -2px; width: 350px; height: 600px; overflow: hidden; visibility: hidden;">
+        <div id="jssor_1" style="position: relative; margin: 0 auto; top: -3px; left: -2px; width: 350px; height:600px;overflow: hidden; visibility: hidden;">
 					    <div class="example" data-u="slides" style="cursor: default; position: relative; top: -3px; left: -2px; width: 350px; height: 600px; overflow: hidden;">
 					            <div data-p="112.50" style="display: none;">
 					                <div class="post_results" id="post_results1" rss_num="5" rss_url="http://www.nation.co.ke/latestrss.rss">
@@ -318,7 +319,7 @@
 				</div><!-- /.panel -->
 								<div class="col-lg-4">
                 
-					<div class="panel">
+					<div class="panel" style = "border:0px;">
                         <div class = "Processes">
                         <div class="panel-heading pull-center heading-processes">
                             Processes

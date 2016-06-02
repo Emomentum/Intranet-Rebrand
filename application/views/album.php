@@ -10,7 +10,7 @@
 <style>
 </style>
 <?php
-	    if($this->session->userdata('access_level')==FALSE){
+	    if($this->session->userdata('email')==FALSE){
 
 	    $this->load->view('login');
 				}

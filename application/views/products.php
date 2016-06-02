@@ -25,7 +25,6 @@ li a span {
     margin: 0 auto;
 }
 li a:hover {
-    background-color: #3E59A8;
 	color:#ffffff;
 	text-decoration:none;
 	
@@ -49,7 +48,7 @@ li a:hover:after {
 </head>
 <body style="background-color:#f1f1f1;">
 <?php
-	    if($this->session->userdata('access_level')==FALSE){
+	    if($this->session->userdata('email')==FALSE){
 
 	    $this->load->view('login');
 				}
@@ -67,19 +66,39 @@ li a:hover:after {
 <?php $this->load->view('includes/nav_bus');?>	
 
 <div class="row content-department">
-  <div class="col-sm-4 col-md-3">
+  <div class="col-sm-4 col-md-3" style = "box-shadow: 0px 0px 18px 3px #888888;">
     
   
     <h4>Team Targets</h4>
  
   <div class="panel-body">
-  <ul>
-  <li>Coming Soon</li>
-  </ul>
+  <ol>
+      <li>NEW BUSINESS WEIGHTING OF $1,486,000
+            <ol style = "list-style-type: lower-alpha;">
+                <li>Business Intelligence   10%</li>
+                <li>Microsoft exclusive of Azure 15%</li>
+                <li>Google 12%</li>
+                <li>Security 10%</li>
+                <li>CRM 5%</li>
+                <li>Development 1.0 services 10%</li>
+                <li>Consultancy 10%</li>
+                <li>AWS/Softlayer/Azure 10%</li>
+                <li>Development 2.0 solutions 5%</li>
+                <li>Tenders and Projects 8%</li>
+	             <li>Support services 5%</li>
+            </ol>
+      </li>
+      <li>NEW PARTNERS PER A YEAR
+            <ol style = "list-style-type: lower-alpha;">
+                <li>4 New Partners per annum</li>
+	            <li>4 New Products per annum</li>
+            </ol>
+      </li>
+  </ol>
    </div>
 
 
-  </div><!--first col end-->
+    </div><!--first col end-->
 <?php
                           foreach ($employee as $employee):
                           ?>   

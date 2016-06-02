@@ -4,7 +4,6 @@ body{background:#eee;margin:0;padding:0}
 .post_results {
     margin: 5px;
     width: 347px;
-    border:1px solid #444;
     float:left;
 }
 .post_results ul {
@@ -15,7 +14,7 @@ body{background:#eee;margin:0;padding:0}
     overflow: hidden;
 }
 .post_results ul li {
-    background: #3E59A8;
+    background: #fff;
     
     height: 60px;
     padding: 10px;
@@ -26,7 +25,7 @@ body{background:#eee;margin:0;padding:0}
 
 }
 .post_results ul li a{
-    color: #fff;
+    color: #000;
     display: block;
     font-size: 14px;
     font-weight: bold;

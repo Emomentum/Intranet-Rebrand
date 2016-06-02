@@ -25,7 +25,6 @@ li a span {
     margin: 0 auto;
 }
 li a:hover {
-    background-color: #3E59A8;
 	color:#ffffff;
 	text-decoration:none;
 	
@@ -49,7 +48,7 @@ li a:hover:after {
 </head>
 <body style="background-color:#f1f1f1;">
 <?php
-	    if($this->session->userdata('access_level')==FALSE){
+	    if($this->session->userdata('email')==FALSE){
 
 	    $this->load->view('login');
 				}
@@ -67,19 +66,21 @@ li a:hover:after {
 <?php $this->load->view('includes/nav_bus');?>	
 
 <div class="row content-department">
-  <div class="col-sm-4 col-md-3">
+  <div class="col-sm-4 col-md-3" style = "box-shadow: 0px 0px 18px 3px #888888;">
     
   
     <h4>Team Targets</h4>
  
   <div class="panel-body">
-  <ul>
-  <li>Coming Soon</li>
-  </ul>
+  <ol>
+      <li>LEADS GENERATED PIPELINE $248,000,000</li>
+      <li>CUSTOMER ACQUISITION 60 (FULL YEAR)</li>
+      <li>REVENUE FROM MARKETING ACTIVITIES $ 560,000</li>
+  </ol>
    </div>
 
 
-  </div><!--first col end-->
+    </div><!--first col end-->
 <?php
                           foreach ($employee as $employee):
                           ?>   
