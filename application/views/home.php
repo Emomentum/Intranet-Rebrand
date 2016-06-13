@@ -10,11 +10,11 @@
         jssor_1_slider_init = function() {
             
             var jssor_1_SlideshowTransitions = [
-              {$Duration:3600,$Opacity:2}
+              {$Duration:6000,$Opacity:2}
             ];
             
             var jssor_1_options = {
-              $AutoPlay: true,
+              $AutoPlay: false,
               $SlideshowOptions: {
                 $Class: $JssorSlideshowRunner$,
                 $Transitions: jssor_1_SlideshowTransitions,
@@ -106,6 +106,14 @@
 
 </head>
 <body>	
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 	<?php
 	    if($this->session->userdata('email')== FALSE){
 
@@ -115,11 +123,11 @@
 		?>
 		
 	<div class="body_holder">
-	<!----------------Header------------->
+	<!-- Header -->
 
 	<?php $this->load->view('includes/header');?>
 	
-<!----------------service------------->
+<!-- service -->
  
 	<div class="">
 		<div class="container">
@@ -127,7 +135,7 @@
     			<div class="col-lg-8">
     			 	<div class="panel panel_announcement">
                         <div class="panel-heading pull-right heading-announcement">
-                            Announcements <span class = "direction-arrow">></span>
+                            Notice Board <span class = "direction-arrow">></span>
                         </div><!-- List group -->
 						<!-- 	<ul class="list-group">
 								<li class="list-group-item"></li> 
@@ -208,7 +216,7 @@
 				<div class="col-lg-4">
 					<div class="panel panel_communications">
                         <div class="panel-heading pull-right heading-communications">
-                            Communications<span class = "direction-arrow">></span>
+                            Announcements<span class = "direction-arrow">></span>
                         </div>
                         <div class = "communications" style = "padding:15px;position:absolute;bottom:0px">
 													 <?php
@@ -283,13 +291,64 @@
                     </div><!-- /.panel -->
 				</div>                
 				<div class="col-lg-4">
+                
+					<div class="panel" style = "border:0px;">
+                        <div class = "Processes">
+                        <div class="panel-heading pull-center heading-processes">
+                            Processes
+                        </div>   
+                        <div style = "font-weight: 600;" class = "processes-list"><a href="http://mailchimp.com/" target="_blank" style = "color:white;">MailChimp</a></div>
+                        <div style = "font-weight: 600;" class = "processes-list"><a href="https://emomentum.sugarondemand.com" target="_blank" style = "color:white;">Sugar CRM</a></div>
+                        <div style = "font-weight: 600;" class = "processes-list"><a href="https://www.projectmanager.com/" target="_blank" style = "color:white;">Projectmanager.com</a></div>
+                        <div style = "font-weight: 600;" class = "processes-list"><a href="http://uk.qbo.intuit.com/" target="_blank" style = "color:white;">Quickbooks</a></div>
+                        <div style = "font-weight: 600;" class = "processes-list"><a href="https://people.zoho.com/people/#home/feeds" target="_blank" style = "color:white;">Zoho People</a></div>
+                        <div style = "font-weight: 600;" class = "processes-list"><a href="https://emomentuminteractive.freshdesk.com/" target="_blank" style = "color:white;">Freshdesk</a></div>
+                        <div style = "font-weight: 600;" class = "processes-list"><a href="http://emomentum-interactive.com/" target="_blank" style = "color:white;">Our Website</a></div>
+                    </div>
+                    </div><!-- /.panel -->
+				</div><!-- /.panel -->
+								<div class="col-lg-4">
+                
+					<div class="panel" style = "border:0px;">
+                        <div class = "innovate">
+                        <div class="panel-heading pull-center heading-processes">
+                            Innovate
+                        </div>   
+                        <div style = "font-weight: 600;" class = "innovate-list"><a href="http://mailchimp.com/" target="_blank" style = "color:black;">Placeholder</a></div>
+                        <div style = "font-weight: 600;" class = "innovate-list"><a href="https://emomentum.sugarondemand.com" target="_blank" style = "color:black;">Placeholder</a></div>
+                        <div style = "font-weight: 600;" class = "innovate-list"><a href="https://www.projectmanager.com/" target="_blank" style = "color:black;">Placeholder</a></div>
+                        <div style = "font-weight: 600;" class = "innovate-list"><a href="http://uk.qbo.intuit.com/" target="_blank" style = "color:black;">Placeholder</a></div>
+                        <div style = "font-weight: 600;" class = "innovate-list"><a href="https://people.zoho.com/people/#home/feeds" target="_blank" style = "color:black;">Placeholder</a></div>
+                        <div style = "font-weight: 600;" class = "innovate-list"><a href="https://emomentuminteractive.freshdesk.com/" target="_blank" style = "color:black;">Placeholder</a></div>
+                        <div style = "font-weight: 600;" class = "innovate-list"><a href="http://emomentum-interactive.com/" target="_blank" style = "color:black;">Placeholder</a></div>
+                    </div>
+                    </div><!-- /.panel -->
+				</div><!-- /.panel -->
+			</div>
+			<div class="row">
+    			
+				<div class="col-lg-4">
+                
+					<div class="panel" style = "border:0px;">
+						<div class="fb-page" data-href="https://www.facebook.com/eMomentumInteractive/" data-tabs="timeline" data-width="360" data-height="383" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/eMomentumInteractive/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/eMomentumInteractive/">Emomentum Interactive Systems ltd</a></blockquote></div>
+                    </div><!-- /.panel -->
+				</div><!-- /.panel --> 
+
+				<div class="col-lg-4">
+                
+					<div class="panel" style = "border:0px;">
+                        <a class="twitter-timeline" data-height="383" href="https://twitter.com/eMomentumKenya">Tweets by eMomentumKenya</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div><!-- /.panel -->
+				</div><!-- /.panel --> 
+
+				<div class="col-lg-4">
 		<div class="panel panel_news" style="padding-right: 4px; background-color: transparent;">
                         <div class="panel-heading pull-center heading-news">
                             News Feeds
                         </div>
 
-        <div id="jssor_1" style="position: relative; margin: 0 auto; top: -3px; left: -2px; width: 350px; height:600px;overflow: hidden; visibility: hidden;">
-					    <div class="example" data-u="slides" style="cursor: default; position: relative; top: -3px; left: -2px; width: 350px; height: 600px; overflow: hidden;">
+        <div id="jssor_1" style="position: relative; margin: 0 auto; top: -3px; left: -2px; width: 350px; height:385px;overflow: hidden; visibility: hidden;">
+					    <div class="example" data-u="slides" style="cursor: default; position: relative; top: -3px; left: -2px; width: 350px; height: 385px; overflow: hidden;">
 					            <div data-p="112.50" style="display: none;">
 					                <div class="post_results" id="post_results1" rss_num="5" rss_url="http://www.nation.co.ke/latestrss.rss">
 					            
@@ -317,23 +376,7 @@
 
                     </div><!-- /.panel -->
 				</div><!-- /.panel -->
-								<div class="col-lg-4">
-                
-					<div class="panel" style = "border:0px;">
-                        <div class = "Processes">
-                        <div class="panel-heading pull-center heading-processes">
-                            Processes
-                        </div>   
-                        <div style = "font-weight: 600;" class = "processes-list"><a href="http://mailchimp.com/" target="_blank" style = "color:white;">MailChimp</a></div>
-                        <div style = "font-weight: 600;" class = "processes-list"><a href="https://emomentum.sugarondemand.com" target="_blank" style = "color:white;">Sugar CRM</a></div>
-                        <div style = "font-weight: 600;" class = "processes-list"><a href="https://www.projectmanager.com/" target="_blank" style = "color:white;">Projectmanager.com</a></div>
-                        <div style = "font-weight: 600;" class = "processes-list"><a href="http://uk.qbo.intuit.com/" target="_blank" style = "color:white;">Quickbooks</a></div>
-                        <div style = "font-weight: 600;" class = "processes-list"><a href="https://people.zoho.com/people/#home/feeds" target="_blank" style = "color:white;">Zoho People</a></div>
-                        <div style = "font-weight: 600;" class = "processes-list"><a href="https://emomentuminteractive.freshdesk.com/" target="_blank" style = "color:white;">Freshdesk</a></div>
-                        <div style = "font-weight: 600;" class = "processes-list"><a href="http://emomentum-interactive.com/" target="_blank" style = "color:white;">Our Website</a></div>
-                    </div>
-                    </div><!-- /.panel -->
-				</div><!-- /.panel -->
+								
 			</div>
 		</div>
   </div>

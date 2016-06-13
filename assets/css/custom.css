@@ -57,7 +57,7 @@ img.logo{
     -moz-background-size: cover;
     -o-background-size: cover;
 	background-size: cover;
-    height:55%;
+    /*height:55%;*/
     color:#ffffff;
 }
 .heading-news{
@@ -73,6 +73,17 @@ img.logo{
     margin: 6px;
     padding:10px;
     background-color:#848482;
+}
+.innovate{
+    /*background-color:#3E59A8;*/
+    background-color:#ffffff;
+    color:#ffffff;
+    text-decoration: none;
+}
+.innovate-list{
+    margin: 6px;
+    padding:10px;
+    background-color:#ffffff;
 }
 .heading-processes{
     /*background-color: #B6B6B6;*/

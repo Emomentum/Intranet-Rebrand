@@ -63,7 +63,7 @@ private function resetpassword($user)
 		$this->load->helper('string');
 		$password= random_string('alnum', 16);
 		$this->db->where('Team_id',$user->Team_id);
-		$this->db->update('team',array('password'=>MD5($password)));
+		$this->db->update('team',array('temppassword'=>MD5($password)));
 		$config = array(
                     'mailtype'  => 'html',
 					'protocol' => 'smtp',

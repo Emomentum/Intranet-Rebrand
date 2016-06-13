@@ -26,6 +26,11 @@ class Check_credentials extends CI_Controller {
 		$username = $this->input->post('username');   
 		//query the database
         $permissions = array();
+
+		$tempresult = $this->loginModel->templogin($username, $password);
+		if ($tempresult) {
+			redirect('home/change_password');
+		}
 		$result = $this->loginModel->login($username, $password);
 		if($result)
 		{
@@ -36,6 +41,7 @@ class Check_credentials extends CI_Controller {
 				$this->session->set_userdata($sess_array);
                 array_push($permissions,$row->permission_id);
 			    redirect('home');
+
 			}
            /* if($permissions[0] == '1'){
              
