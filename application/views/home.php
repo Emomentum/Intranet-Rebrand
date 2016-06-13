@@ -350,12 +350,12 @@
         <div id="jssor_1" style="position: relative; margin: 0 auto; top: -3px; left: -2px; width: 350px; height:385px;overflow: hidden; visibility: hidden;">
 					    <div class="example" data-u="slides" style="cursor: default; position: relative; top: -3px; left: -2px; width: 350px; height: 385px; overflow: hidden;">
 					            <div data-p="112.50" style="display: none;">
-					                <div class="post_results" id="post_results1" rss_num="5" rss_url="http://www.nation.co.ke/latestrss.rss">
+					                <div class="post_results" id="post_results1" rss_num="6" rss_url="http://www.nation.co.ke/latestrss.rss">
 					            
 					                </div>
 					            </div>
 					            <div data-p="112.50" style="display: none;">
-					               <div class="post_results" id="post_results2" rss_num="5" rss_url="http://www.standardmedia.co.ke/rss/headlines.php">
+					               <div class="post_results" id="post_results2" rss_num="6" rss_url="http://www.standardmedia.co.ke/rss/headlines.php">
 					           
 					                </div>
 					            </div>        
