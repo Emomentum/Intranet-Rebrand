@@ -29,7 +29,7 @@
 							   <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">NEWS AND EVENTS<b class="caret"></b></a>
 									<ul class="dropdown-menu">
 										<li><?php echo anchor('home/newsandevents/1','Announcements')?></li>
-										<li><?php echo anchor('home/newsandevents/2','Communications')?></li>
+										<li><?php echo anchor('home/newsandevents/2','Innovate')?></li>
 										<li><?php echo anchor('home/newsandevents/4','Upcoming Events')?></li>
 									</ul>
 								</li>
