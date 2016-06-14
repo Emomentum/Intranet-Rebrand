@@ -119,7 +119,7 @@
 				<?php echo validation_errors();?>
 			<div class="input_text_01">
 				<?php
-				$attributes = array('type'=>'text','id'=>'username','name'=>'username','value'=>$this->session->userdata("username"),'disabled'=>'true');
+				$attributes = array('type'=>'text','id'=>'username','name'=>'username','value'=> $username,'disabled'=>'true');
 				echo form_input($attributes);
 				?>
 			</div>

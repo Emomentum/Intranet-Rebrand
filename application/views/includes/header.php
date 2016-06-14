@@ -36,7 +36,7 @@
 								<li><?php echo anchor('Innovate','INNOVATE')?></li>
 								   <li><a href="#" data-toggle="dropdown" class="dropdown-toggle"><img src = "<?php echo base_url();?>assets/images/icon.png"/><b class="caret"></b></a>
 									<ul class="dropdown-menu">
-										<li><?php echo anchor('home/change_password','Change Password')?></li>
+										<li><?php echo anchor('home/change_password/'.$this->session->userdata("username"),'Change Password')?></li>
 										<li><?php echo anchor('home/sign_out','Log Out')?></li>
 										<li><?php echo anchor('Admin','Admin Panel')?></li>
 									</ul>

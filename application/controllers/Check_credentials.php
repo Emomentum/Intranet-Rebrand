@@ -29,7 +29,7 @@ class Check_credentials extends CI_Controller {
 
 		$tempresult = $this->loginModel->templogin($username, $password);
 		if ($tempresult) {
-			redirect('home/change_password');
+			redirect('home/change_password/'.$username);
 		}
 		$result = $this->loginModel->login($username, $password);
 		if($result)

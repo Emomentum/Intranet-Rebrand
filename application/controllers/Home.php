@@ -358,8 +358,9 @@ public function departments()
 			$this->session->sess_destroy();
 			$this->load->view('login');
 		}
-		function change_password(){
-			$this->load->view('change_password');
+		function change_password($username){
+			$data['username'] = $username;
+			$this->load->view('change_password',$data);
 		}
 		function checkpassword()
 		{
