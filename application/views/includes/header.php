@@ -29,11 +29,10 @@
 							   <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">NEWS AND EVENTS<b class="caret"></b></a>
 									<ul class="dropdown-menu">
 										<li><?php echo anchor('home/newsandevents/1','Announcements')?></li>
-										<li><?php echo anchor('home/newsandevents/2','Innovate')?></li>
 										<li><?php echo anchor('home/newsandevents/4','Upcoming Events')?></li>
 									</ul>
 								</li>
-								<li><?php echo anchor('Innovate','INNOVATE')?></li>
+								<li><?php echo anchor('home/newsandevents/2','INNOVATE')?></li>
 								   <li><a href="#" data-toggle="dropdown" class="dropdown-toggle"><img src = "<?php echo base_url();?>assets/images/icon.png"/><b class="caret"></b></a>
 									<ul class="dropdown-menu">
 										<li><?php echo anchor('home/change_password/'.$this->session->userdata("username"),'Change Password')?></li>

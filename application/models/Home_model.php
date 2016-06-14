@@ -7,7 +7,15 @@ class Home_model extends CI_Model {
 	  function __construct() {
             parent::__construct(); //call the model contructor
         }
-		 
+	  
+    function getComments($id){
+    	$this->db->select('*');
+		$this->db->from('blog_comments');
+		$this->db->where(array('Blog_topic_id ='=> $id));
+		$result = $this->db->get();
+        return $result->result();
+		 }
+	
 	function getEvent($id){
 	 	 	
 	 	$this->db->select('*');

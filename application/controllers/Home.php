@@ -47,9 +47,17 @@ class Home extends CI_Controller {
 		$data['event']=$this->Home_model->getEvent($id);
 		$data['upcoming']=$this->Home_model->eventNews($type=4);
 		$data['breadcrum'] = "Article";
+		$data['comments'] = $this->Home_model->getComments($id);
 		$this->load->view('includes/single_event',$data);
 		
 }
+	function setComments($id,$type){
+		$email = $this->session->userdata('email');
+		$comments = $this->input->post('comments');
+		$data = array('Comments'=>$comments,'Email'=>$email,'Blog_topic_ID'=>$id);
+		$this->db->insert('blog_comments',$data);	
+		redirect('home/single_events/'.$id.'/'.$type);
+	}
 	function announcement()
 {
 	$type=1;
@@ -136,6 +144,9 @@ function save_events($type)
 			$postCont = $this->input->post('content');
 					
 			$this->Home_model->createPage($postTitle,$postCont,$postStart,$postEnd,$type);
+			}
+			else if($type == 1){
+				
 			}
 			
 			else{	 	

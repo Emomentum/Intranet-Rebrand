@@ -19,6 +19,7 @@
 							$id= $row->Blog_topic_id;
 							$content=$row->details;
 							$posted=$row->Timestamp;
+							$type = $row->Blog_type_ID;
 							$image =$row->photo_url;
 					?>
 					
@@ -49,7 +50,7 @@
 			if($image == "")
 				{
 				?>
-				<div class = "col-sm-4 col-md-8 col-md-offset-2" style = "Background-color:#fff">
+				<div class = "col-sm-4 col-md-8 col-md-offset-2" style = "background-color:#fff">
 				<img src = "https://storage.googleapis.com/emomentum_profile_pics/question.png" alt="..." style ="position:relative;"/>
 						 <?php
 						 }else{?>
@@ -60,8 +61,9 @@
                           	?>	
 					
 					<input type = "hidden" class = "news_id" value = "<?php echo $id; ?>" name = 'blog_topic_id'/>
+					<input type = "hidden" class = "news_id" value = "<?php echo $type; ?>" name = 'blog_type_id'/>
 				</div>
-				<div class = "col-sm-4 col-md-8 col-md-offset-2">
+				<div class = "col-sm-4 col-md-8 col-md-offset-2" style = "background-color:#fff;padding: 10px;border-radius: 5px;margin-top: 10px;">
 					<p style = "text-align:justify">
 					<?php
 						echo "<b>Posted On: </b>".$posted."<br /><br />";
@@ -75,6 +77,48 @@
 				
              
                        </div>
+                   </div>
+                   <hr style = "border: solid 1px;color: cfcfcf;">
+                   <div class = "row">
+                   		<div class="col-sm-4 col-md-8 col-md-offset-2" id="service1">
+                   			<p style = "text-align:justify">
+                   				<b>Comments</b>
+                   			</p>
+                   		</div>
+                   		<?php
+                   		if (empty($comments)){
+                   			?>
+                   			<div class="col-sm-4 col-md-8 col-md-offset-2" id="service1" style = "text-align:justify;background-color: #fff;margin-top:5px;padding-top: 10px;padding-bottom:10px;border-radius: 5px; ">
+                   					<p>No Comments Available</p>
+                   				</div>
+                   				<?php
+                   		}
+						else{
+                   		?>
+                   		  <?php foreach ($comments as $row) : ?>
+                   				<div class="col-sm-4 col-md-8 col-md-offset-2" id="service1" style = "text-align:justify;background-color: #fff;margin-top:5px;padding-top: 10px;padding-bottom:10px;border-radius: 5px; ">
+                   					<p><?php echo $row->Comments?></p>
+                   					<hr>
+                   					<span style ="color:cfcfcf"><small>Time posted: <?php echo $row->Timestamp?></span></small><br>
+                   					<span style ="color:cfcfcf"><small>Posted By: <?php echo $row->Email?></small></span>
+                   				</div>
+                   				<?php 
+                   				endforeach;
+                   				}
+                   				?>
+                   				<?php echo form_open('home/setComments/'.$id.'/'.$type)?>
+                   		<div class="col-sm-4 col-md-8 col-md-offset-2" id="service1" style = "padding-top: 10px;padding-left: 0px;padding-right: 0px;">
+                   			
+                   			<textarea rows="5" class = "form-control" required = "true" name = "comments">
+                   				
+                   			</textarea>
+                   		</div>
+                   			<div class="col-sm-4 col-md-8 col-md-offset-2" id="service1" style = "margin-top:10px">
+                   			<input type = "submit" style = "float:left"/>
+                   				
+                   		</div>
+                   	</form>
+                   	
                    </div>
                   </div>
 <?php $this->load->view('includes/footer');?>
