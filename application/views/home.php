@@ -212,17 +212,17 @@
 							
 							
                     </div><!-- /.panel -->
-				</div>                
+				</div>  <!--  /.col-lg-8   -->           
 				<div class="col-lg-4">
 					<div class="panel panel_communications">
                         <div class="panel-heading pull-right heading-communications">
                             Announcements<span class = "direction-arrow">></span>
                         </div>
-                        <div class = "communications" style = "padding:15px;position:absolute;bottom:0px">
+                        <div class = "announcement" style = "padding:15px;position:absolute;bottom:0px">
 													 <?php
 													 $counter = 0;
 									
-								foreach ($communications as $object ) {
+								foreach ($announcement as $object ) {
 									$counter++;
 									$type=2;
 									$title1= $object->Topic;
@@ -256,11 +256,11 @@
 						
 					</div>
                     </div><!-- /.panel -->
-				</div><!-- /.panel -->
+				</div><!-- /.col-lg-4 -->
 			</div>
 			<div class="row">
     			<div class="col-lg-4">
-    			 	<div class="panel panel_upcoming">
+    			 	<div class="panel panel_upcoming panel_row1">
                         <div class="panel-heading pull-right heading-upcoming">
                             Upcoming Events
                         </div>
@@ -289,10 +289,10 @@
 	?>
 	</div>
                     </div><!-- /.panel -->
-				</div>                
+				</div> <!-- /.col-lg-4  -->              
 				<div class="col-lg-4">
                 
-					<div class="panel" style = "border:0px;">
+					<div class="panel panel_row1" style = "border:0px;">
                         <div class = "Processes">
                         <div class="panel-heading pull-center heading-processes">
                             Processes
@@ -306,24 +306,36 @@
                         <div style = "font-weight: 600;" class = "processes-list"><a href="http://emomentum-interactive.com/" target="_blank" style = "color:white;">Our Website</a></div>
                     </div>
                     </div><!-- /.panel -->
-				</div><!-- /.panel -->
+				</div><!-- /.col-lg-4 -->
 								<div class="col-lg-4">
                 
-					<div class="panel" style = "border:0px;">
+					<div class="panel panel_row1" style = "border:0px;">
                         <div class = "innovate">
                         <div class="panel-heading pull-center heading-processes">
                             Innovate
                         </div>   
-                        <div style = "font-weight: 600;" class = "innovate-list"><a href="http://mailchimp.com/" target="_blank" style = "color:black;">Placeholder</a></div>
-                        <div style = "font-weight: 600;" class = "innovate-list"><a href="https://emomentum.sugarondemand.com" target="_blank" style = "color:black;">Placeholder</a></div>
-                        <div style = "font-weight: 600;" class = "innovate-list"><a href="https://www.projectmanager.com/" target="_blank" style = "color:black;">Placeholder</a></div>
-                        <div style = "font-weight: 600;" class = "innovate-list"><a href="http://uk.qbo.intuit.com/" target="_blank" style = "color:black;">Placeholder</a></div>
-                        <div style = "font-weight: 600;" class = "innovate-list"><a href="https://people.zoho.com/people/#home/feeds" target="_blank" style = "color:black;">Placeholder</a></div>
-                        <div style = "font-weight: 600;" class = "innovate-list"><a href="https://emomentuminteractive.freshdesk.com/" target="_blank" style = "color:black;">Placeholder</a></div>
-                        <div style = "font-weight: 600;" class = "innovate-list"><a href="http://emomentum-interactive.com/" target="_blank" style = "color:black;">Placeholder</a></div>
+                        <div style = "font-weight: 600;" class = "innovate-list ">
+                        <?php foreach ($newsandevents as $key): 
+                   
+                        		$type = 2;
+                        		$id = $key->Blog_topic_id;
+                        		$readmore=anchor('home/single_events/'.$id.'/'.$type.'','Read More',array('style'=>'color:green'));
+ 	
+                        	 ?>
+
+                        	 <h4 style="font-size: 14px;">
+                        	 <?php 
+                        	 	echo anchor('home/single_events/'.$id.'/'.$type,$key->Topic);
+                        	 	?>
+                        	 	</h4>
+
+                       
+                       
+                        <? endforeach; ?>
+                        </div>
                     </div>
                     </div><!-- /.panel -->
-				</div><!-- /.panel -->
+				</div><!-- /.col-lg-4 -->
 			</div>
 			<div class="row">
     			
@@ -332,14 +344,14 @@
 					<div class="panel" style = "border:0px;">
 						<div class="fb-page" data-href="https://www.facebook.com/eMomentumInteractive/" data-tabs="timeline" data-width="360" data-height="383" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/eMomentumInteractive/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/eMomentumInteractive/">Emomentum Interactive Systems ltd</a></blockquote></div>
                     </div><!-- /.panel -->
-				</div><!-- /.panel --> 
+				</div><!-- /.col-lg-4 --> 
 
 				<div class="col-lg-4">
                 
 					<div class="panel" style = "border:0px;">
                         <a class="twitter-timeline" data-height="383" href="https://twitter.com/eMomentumKenya">Tweets by eMomentumKenya</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div><!-- /.panel -->
-				</div><!-- /.panel --> 
+				</div><!-- /.col-lg-4 --> 
 
 				<div class="col-lg-4">
 		<div class="panel panel_news" style="padding-right: 4px; background-color: transparent;">
@@ -375,7 +387,7 @@
     </script>
 
                     </div><!-- /.panel -->
-				</div><!-- /.panel -->
+				</div><!-- /.col-lg-4 -->
 								
 			</div>
 		</div>

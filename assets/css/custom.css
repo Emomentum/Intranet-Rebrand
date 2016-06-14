@@ -15,6 +15,9 @@ body{
 img.logo{
 	width:232px;
 }
+.panel_row1{
+    min-height: 363px;
+}
 .panel_announcement{
 	 background: url('../images/nic.gif') no-repeat center center; 
 	-webkit-background-size: cover;
@@ -84,6 +87,7 @@ img.logo{
     margin: 6px;
     padding:10px;
     background-color:#ffffff;
+    text-decoration: none;
 }
 .heading-processes{
     /*background-color: #B6B6B6;*/

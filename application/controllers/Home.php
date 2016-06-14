@@ -14,7 +14,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('Home_model');		
 		$data['announcement']=$this->Home_model->getUpcomingEventNews($type=1);
-		$data['communications']=$this->Home_model->getUpcomingEventNews($type=2);
+		$data['newsandevents']=$this->Home_model->getUpcomingEventNews($type=2);
 		$data['upcoming']=$this->Home_model->eventNews($type=4);
 		$this->load->view('home',$data);
 		
