@@ -4,7 +4,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Emomentum Intranet</title>
+    <title>Econnect</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url()?>AdminAssets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->

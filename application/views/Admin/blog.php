@@ -25,7 +25,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Emomentum Blog</h1>
+                    <h2 class="page-header" style = "color:#ec971f">Notice Board</h2>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -40,7 +40,7 @@
             	             	<a href="#newBlog" class="btn btn-primary btn-block" data-toggle="modal">New Post</a><br>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           <i class="fa fa-comment fa-fw"></i>Blog Topics
+                           <i class="fa fa-comment fa-fw"></i>Topic
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -66,6 +66,9 @@
                         <div class="panel-body">
                                     <?php foreach($blogTopicDescription as $description):?>
                                     <div class="timeline-panel">
+                                    	<div>
+                                    		<img src= "<?php echo base_url()?>assets/images/announcements.jpg" style = "width:60%"/>
+                                    	</div>
                                         <div class="timeline-heading">
                                         	<div>
                                             <h4 class="timeline-title"style = "float:left;"><?=$description->Topic ;?></h4>
@@ -84,10 +87,11 @@
 										<div id="editBlog" class="modal fade">
 										    <div class="modal-dialog">
 										        <div class="modal-content form-group" >
-										        	<?php echo form_open('Admin/UpdateBlog') ?>
+										        	<?php echo form_open_multipart('Admin/UpdateBlog') ?>
 										            <div class="modal-header">
 										                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 										                <input class = "form-control" name = "topic" id= "topic" type = "Text" value = "<?=$description->Topic ;?>" required />
+										                <label>Feature Image : </label><input type = "file" class = "form-control" name = "userfile" id = "userfile"/><br>
 										                <input type = "Text" name = "topicId" id = "topicId"value = "<?=$description->Blog_topic_id;?>" hidden/>
 										            </div>
 										            <div class="modal-body">
@@ -106,7 +110,7 @@
                         <div id="deleteBlogpost" class="modal fade">
 										    <div class="modal-dialog">
 										        <div class="modal-content form-group" >
-										        	<?php echo form_open('Admin/DeleteBlog') ?>
+										        	<?php echo form_open_multipart('Admin/DeleteBlog') ?>
 										            <div class="modal-header">
 										                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 										           		<input type = "Text" name = "topicId" id = "topicId"value = "<?=$description->Blog_topic_id;?>" hidden/>
@@ -132,6 +136,7 @@
 										        	<?php echo form_open('Admin/newBlog') ?>
 										            <div class="modal-header">
 										                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+										                <label>Feature Image : </label><input type = "file" class = "form-control" name = "userfile" id = "userfile"/><br>
 										                <input class = "form-control" name = "new_topic" id= "new_topic" type = "Text" required Placeholder = "Post Topic" /> 
 										            </div>
 										            <div class="modal-body">

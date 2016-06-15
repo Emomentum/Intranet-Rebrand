@@ -420,7 +420,7 @@ $data['access'] = $this->Team_model->getAccess();
 	{
 		$data['blogTopics'] = $this->getTopic();
 		$this->load->model('Team_model');
-$data['access'] = $this->Team_model->getAccess();
+		$data['access'] = $this->Team_model->getAccess();
 		$data['blogTopicDescription'] = $this->blog_model->getTopicDescription();	
 		$this->load->view('Admin/blog',$data);
 	}
@@ -437,9 +437,14 @@ $data['access'] = $this->Team_model->getAccess();
        endif;
 	}
 	function newBlog(){
+		$filename = $_FILES['userfile']['name'];
+		
+				
+		if($filename == '')
+		{
 		$blogTopic = $this->input->post('new_topic');
 		$blogDescription = $this->input->post('new_Description');
-		$result = $this->blog_model->newblog($blogTopic,$blogDescription);
+		$result = $this->blog_model->newblog($filename,$blogTopic,$blogDescription);
 		if($result == "Topic already exist"):
 			 $this->session->set_flashdata('fail_new_blog','<div class="alert alert-danger">
                                                                     <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -450,9 +455,66 @@ $data['access'] = $this->Team_model->getAccess();
 		else:
 		redirect('admin/blog');
 		endif;
+
+		}
+		else{
+		$option = ['gs_bucket_name' => 'emomentum_profile_pics'];
+		$upload_ur = CloudStorageTools::createUploadUrl('/upload', $option);
+		$upload_ur;
+		$filename = $_FILES['userfile']['name'];
+		$gs_name = $_FILES['userfile']['tmp_name'];
+		move_uploaded_file($gs_name, 'gs://emomentum_profile_pics/'.$filename.'');
+		$blogTopic = $this->input->post('new_topic');
+		$blogDescription = $this->input->post('new_Description');
+		$result = $this->blog_model->newblog($filename,$blogTopic,$blogDescription);
+		if($result == "Topic already exist"):
+			 $this->session->set_flashdata('fail_new_blog','<div class="alert alert-danger">
+                                                                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                                                    Unable to create New blog post.Topic Already already exist
+                                                                 </div>
+                                                                '); 
+			redirect('admin/blog');
+		else:
+		redirect('admin/blog');
+		endif;
+			
+			}	
 		
 	}
 	function UpdateBlog(){
+			$filename = $_FILES['userfile']['name'];
+		if($filename == '')
+		{
+			$blogtopicId = $this->input->post('topicId');
+			$blogTopic = $this->input->post('topic');
+			$blogDescription = $this->input->post('blogDescription');
+			$this->blog_model->updateblog($filename,$blogtopicId,$blogTopic,$blogDescription);
+			$this->session->set_flashdata('success_update','<div class="alert alert-success">
+                                                                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                                                    Update successful
+                                                                 </div>
+                                                                '); 
+               redirect('admin/blog');
+		}
+		else{
+			$option = ['gs_bucket_name' => 'emomentum_profile_pics' ];
+			$upload_ur = CloudStorageTools::createUploadUrl('/upload', $option);
+			$upload_ur;
+			$filename = $_FILES['userfile']['name'];
+			$gs_name = $_FILES['userfile']['tmp_name'];
+			move_uploaded_file($gs_name, 'gs://emomentum_profile_pics/'.$filename.'');
+			$blogtopicId = $this->input->post('topicId');
+			$blogTopic = $this->input->post('topic');
+			$blogDescription = $this->input->post('blogDescription');
+			$this->blog_model->updateblog($filename,$blogtopicId,$blogTopic,$blogDescription);
+			$this->session->set_flashdata('success_update','<div class="alert alert-success">
+                                                                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                                                    Update successful
+                                                                 </div>
+                                                                '); 
+               redirect('admin/blog');		
+			
+		}
 		$blogtopicId = $this->input->post('topicId');
 		$blogTopic = $this->input->post('topic');
 		$blogDescription = $this->input->post('blogDescription');

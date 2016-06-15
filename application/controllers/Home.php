@@ -18,8 +18,7 @@ class Home extends CI_Controller {
 		$data['upcoming']=$this->Home_model->eventNews($type=4);
 		$this->load->view('home',$data);
 		
-	}	
-	
+	}		
 	function newsandevents($type)
 	{
 		$types=$type;
@@ -63,6 +62,7 @@ class Home extends CI_Controller {
 	$type=1;
 	$data['type']=$type;
 	$this->load->model('Home_model');
+	$data['pages']='Announcements';
 	$data['upcoming']=$this->Home_model->getAllUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
 }
@@ -71,6 +71,7 @@ function communications()
 {
 	$type=2;
 	$data['type']=$type;
+	$data['pages']='Blog';
 	$this->load->model('Home_model');
 	$data['upcoming']=$this->Home_model->getAllUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
@@ -81,6 +82,7 @@ function upcoming()
 	$type=4;
 	$data['type']=$type;
 	$this->load->model('Home_model');
+	$data['pages']='Upcoming Events';
 	$data['upcoming']=$this->Home_model->getAllUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
 }
@@ -146,6 +148,29 @@ function save_events($type)
 			$this->Home_model->createPage($postTitle,$postCont,$postStart,$postEnd,$type);
 			}
 			else if($type == 1){
+				$postTitle = $this->input->post('title');
+				$postStart = "N/A";
+				$postEnd = "N/A";
+				$postCont = $this->input->post('content');					
+			$this->Home_model->createPage($postTitle,$postCont,$postStart,$postEnd,$type);
+				$config = array(
+                    'mailtype'  => 'html',
+					'protocol' => 'smtp',
+					'smtp_host' => 'ssl://smtp.gmail.com',
+					'smtp_port' => 465,
+					'smtp_user' => stripslashes('development.team@emomentum-interactive.com'),
+					'smtp_pass' => stripslashes('K@r1bu12345!'),					
+					'charset'  => 'iso-8859-1'
+				); 
+				   ini_set("SMTP", "ssl://smtp.gmail.com");
+				   ini_set("smtp_port", "465");
+				   $this->load->library('email', $config);
+				   $this->email->set_newline("\r\n");
+				   $this->email->from('econnect@emomentum-interactive.com', 'econnect');
+				   $this->email->to('kingsley.amaitsa@emomentum-interactive.com');
+				   $this->email->subject('New announcement');
+				   $this->email->message('Please <a href = "'.base_url().'home/single_events/">click here </a>to view the announcement');
+				   $this->email->send();
 				
 			}
 			
@@ -168,6 +193,40 @@ function save_events($type)
 			$postCont = $this->input->post('content');
 					
 			$this->Home_model->createPage($postTitle,$postCont,$postStart,$postEnd,$type);
+			}
+						else if($type == 1){
+				$postTitle = $this->input->post('title');
+				$postStart = "N/A";
+				$postEnd = "N/A";
+				$postCont = $this->input->post('content');					
+			$this->Home_model->createPage($postTitle,$postCont,$postStart,$postEnd,$type);
+			//fetches the id of the new announcement
+			$this->db->select('blog_Topicid')
+			 		 ->From('blog_topic');
+	        $result = $this->db->get()->result();
+            $noofrows = count($result);
+			$lastRow = $noofrows-1;
+			$blogTopicid = $result[$lastRow]->blog_Topicid;
+
+				$config = array(
+                    'mailtype'  => 'html',
+					'protocol' => 'smtp',
+					'smtp_host' => 'ssl://smtp.gmail.com',
+					'smtp_port' => 465,
+					'smtp_user' => stripslashes('development.team@emomentum-interactive.com'),
+					'smtp_pass' => stripslashes('K@r1bu12345!'),					
+					'charset'  => 'iso-8859-1'
+				); 
+				   ini_set("SMTP", "ssl://smtp.gmail.com");
+				   ini_set("smtp_port", "465");
+				   $this->load->library('email', $config);
+				   $this->email->set_newline("\r\n");
+				   $this->email->from('econnect@emomentum-interactive.com', 'econnect');
+				   $this->email->to('kingsley.amaitsa@emomentum-interactive.com');
+				   $this->email->subject('New announcement');
+				   $this->email->message('<a href = "'.base_url().'home/single_events/'.$blogTopicid.'/'.$type.'">click here </a>to view');
+				   $this->email->send();
+				
 			}
 			
 			else{	 	
@@ -398,4 +457,5 @@ public function departments()
 		redirect('login');
 		}							
 		}
+		
 }

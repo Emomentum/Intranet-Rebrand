@@ -6,12 +6,14 @@
                                    <?php echo anchor('home/announcement','Announcement')?> 
                                 </li>
 								<li>
-                                    <?php echo anchor('home/communications','communications')?>
-                                </li>
-								<li>
                                   <?php echo anchor('home/upcoming','Upcomimg Events')?>
                                 </li>
-								
+                                <li>
+                                    <?php echo anchor('home/communications','Blog')?>
+                                </li>
+								<li>
+                                    <?php echo anchor('admin','Notice Board')?>
+                                </li>
                               
                             </ul>
                             <!-- /.nav-second-level -->

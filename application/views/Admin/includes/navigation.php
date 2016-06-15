@@ -6,7 +6,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Emomentum Intranet Admin Panel</a>
+                <a class="navbar-brand" href="">Econnect Admin Panel</a>
             </div>
             <!-- /.navbar-header -->
 
