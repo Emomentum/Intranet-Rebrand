@@ -153,11 +153,11 @@
 								  <div class="carousel-inner">
 							   <?php
     								   $counter = 1;
-										foreach ($announcement as $object ) {
+										foreach ($noticeboard as $object ) {
 											
 											
 											
-											$type=1;
+											$type=5;
 											$title1= $object->Topic;
 											$title= substr($title1, 0, 35);
 											$id=$object->Blog_topic_id;
@@ -222,13 +222,13 @@
 													 <?php
 													 $counter = 0;
 									
-								foreach ($announcement as $object ) {
+								foreach ($announcement as $notice ) {
 									$counter++;
-									$type=2;
-									$title1= $object->Topic;
+									$type=1;
+									$title1= $notice->Topic;
 									$title= substr($title1, 0, 35);
-									$id=$object->Blog_topic_id;
-									$details= $object->details;
+									$id=$notice->Blog_topic_id;
+									$details= $notice->details;
 									$topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');		
 									$readmore=anchor('home/single_events/'.$id.'/'.$type.'','Read More',array('style'=>'color:green'));
 								

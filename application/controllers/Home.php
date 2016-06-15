@@ -15,6 +15,7 @@ class Home extends CI_Controller {
 		$this->load->model('Home_model');		
 		$data['announcement']=$this->Home_model->getUpcomingEventNews($type=1);
 		$data['newsandevents']=$this->Home_model->getUpcomingEventNews($type=2);
+		$data['noticeboard']=$this->Home_model->getAllUpcomingEventNews($type=5);
 		$data['upcoming']=$this->Home_model->eventNews($type=4);
 		$this->load->view('home',$data);
 		
@@ -76,6 +77,8 @@ function communications()
 	$data['upcoming']=$this->Home_model->getAllUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
 }
+
+
 
 function upcoming()
 {
