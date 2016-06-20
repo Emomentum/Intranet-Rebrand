@@ -19,7 +19,7 @@ img.logo{
     min-height: 363px;
 }
 .panel_announcement{
-	 background: url('../images/nic.gif') no-repeat center center; 
+	 /*background: url('../images/nic.gif') no-repeat center center; */
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -43,7 +43,7 @@ img.logo{
     background-color: #151B8D;
 }
 .panel_upcoming{
-	 background: url('../images/upcoming.jpg') no-repeat center center; 
+ background: url('../images/upcoming.jpg') no-repeat center center; 
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

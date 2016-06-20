@@ -137,4 +137,15 @@ class Blog_model extends CI_model
  	$this->db->insert('blog_comments',$data);
 	
  }
+ public function getAnnouncement(){		
+		$blogId = 1;
+		$this->db->select('*');
+		$this->db->from('blog_topic');
+		$this->db->where(array('Blog_type_ID ='=> $blogId));
+		$this->db->join('blog_details','blog_details.Blog_topic_id = blog_topic.Blog_topicID');
+		$this->db->order_by('Blog_topicID','desc');
+		$this->db->limit(1);
+		$result = $this->db->get();
+		return $result->result();
+	}
 }  

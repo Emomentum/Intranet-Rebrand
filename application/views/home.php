@@ -2,15 +2,16 @@
 <head>
 <meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/custom.css">
+	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/js/jssor.slider.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/custom.css" />
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/script.js"></script>
       <script>
         jssor_1_slider_init = function() {
             
             var jssor_1_SlideshowTransitions = [
-              {$Duration:6000,$Opacity:2}
+              {$Duration:3000,$Opacity:2}
             ];
             
             var jssor_1_options = {
@@ -133,37 +134,16 @@
 		<div class="container">
 			<div class="row">
     			<div class="col-lg-8">
-    			 	<div class="panel panel_announcement">
-                        <div class="panel-heading pull-right heading-announcement">
-                            Notice Board <span class = "direction-arrow">></span>
-                        </div><!-- List group -->
-						<!-- 	<ul class="list-group">
-								<li class="list-group-item"></li> 
-							</ul><!-- /.panel-body -->
-							
-							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="6000" style = "padding:15px;position:absolute;bottom:0px">
-								  <!-- Indicators -->
-								  <ol class="carousel-indicators">
-									<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-									<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-									<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-									<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-								  </ol>								 
-								  <!-- Wrapper for slides -->
-								  <div class="carousel-inner">
-							   <?php
-    								   $counter = 1;
+    			<?php
 										foreach ($noticeboard as $object ) {
 											
-											
-											
-											$type=5;
 											$title1= $object->Topic;
+											$img=$object->photo_url;
 											$title= substr($title1, 0, 35);
 											$id=$object->Blog_topic_id;
 											$details= $object->details;
-											$topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');
-											$readmore=anchor('home/single_events/'.$id.'/'.$type.'','Read More',array('style'=>'color:green'));
+											$topic= anchor('home/single_events/'.$id.'/',''.$title.'');
+											$readmore=anchor('home/single_events/'.$id.'/','Read More',array('style'=>'color:green'));
 										
 										  
 										  $string = strip_tags($details);
@@ -176,11 +156,21 @@
 										// make sure it ends in a word so assassinate doesn't become ass...
 										$string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
 									} 		
-									if($counter==1){
 										?>
+    			 	<div class="panel panel_announcement" style="background: url('https://storage.googleapis.com/emomentum_announcements/<?php echo $img;?>') no-repeat center center;
+    			 	-webkit-background-size: cover;
+                    -moz-background-size: cover;
+					-o-background-size: cover;
+					background-size: cover;">
+                        <div class="panel-heading pull-right heading-announcement">
+                            Notice Board <span class = "direction-arrow">></span>
+                        </div><!-- List group -->
+						<!-- 	<ul class="list-group">
+								<li class="list-group-item"></li> 
+							</ul><!-- /.panel-body -->
+							<div>
 												<div class="item active">
-									  <img src="http://placehold.it/1200x315" style = "opacity:0" alt="...">
-									  <div class="carousel-caption" style = "text-align:left;left:0px;width:100%">
+									  <div class="carousel-caption" style = "text-align:left; left:0px; width:90%; padding-left:20px;">
 										  <h3 style = "font-weight: 600;font-size: 18px;text-decoration: none;color: #fff;"><?php echo $topic;?></h3>
 										  <p><?php echo $string;?></p>
 										  
@@ -188,25 +178,76 @@
 									</div>
 									<?php
 									}
-								else{     
+										?>
+								  
+							</div>
+							<!-- slide show of noticeboard -->
+							<!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="6000" style = "padding:15px;position:absolute;bottom:0px">
+								  - Indicators -
+								  <ol class="carousel-indicators">
+									<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+									<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+									<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+									<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+								  </ol>								 
+								  - Wrapper for slides -
+								  <div class="carousel-inner">
+							   <?php
+    					// 			   $counter = 1;
+									// 	foreach ($noticeboard as $object ) {
+											
+											
+											
+									// 		$type=5;
+									// 		$title1= $object->Topic;
+									// 		$title= substr($title1, 0, 35);
+									// 		$id=$object->Blog_topic_id;
+									// 		$details= $object->details;
+									// 		$topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');
+									// 		$readmore=anchor('home/single_events/'.$id.'/'.$type.'','Read More',array('style'=>'color:green'));
+										
+										  
+									// 	  $string = strip_tags($details);
+
+									// if (strlen($string) > 100) {
+
+									// 	// truncate string
+									// 	$stringCut = substr($string, 0, 99);
+
+									// 	// make sure it ends in a word so assassinate doesn't become ass...
+									// 	$string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
+									// } 		
+									// if($counter==1){
+										?>
+												<div class="item active">
+									  <img src="http://placehold.it/1200x315" style = "opacity:0" alt="...">
+									  <div class="carousel-caption" style = "text-align:left;left:0px;width:100%">
+										  <h3 style = "font-weight: 600;font-size: 18px;text-decoration: none;color: #fff;"><?php // echo $topic;?></h3>
+										  <p><?php // echo $string;?></p>
+										  
+									  </div>
+									</div>
+									<?php
+									// }
+								//else{     
 										?>
 										<div class="item">
 									  <img src="http://placehold.it/1200x315" style = "opacity:0" alt="...">
 									  <div class="carousel-caption" style = "text-align:left;left:0px;width:100%">
-										  <h3 style = "font-weight: 600;font-size: 18px;text-decoration: none;color: #fff;"><?php echo $topic;?></h3>
-										  <p><?php echo $string;?></p>
+										  <h3 style = "font-weight: 600;font-size: 18px;text-decoration: none;color: #fff;"><?php // echo $topic;?></h3>
+										  <p><?php // echo $string;?></p>
 										  
 									  </div>
 									</div>
 									
 										<?php
-								}
-										$counter++;
-										}
+								// }
+										//$counter++;
+									//	}
 										?>
 								  </div>
 								
-								</div> <!-- Carousel -->
+								</div> <!- Carousel - -->
 							
 							
 							
@@ -214,57 +255,55 @@
                     </div><!-- /.panel -->
 				</div>  <!--  /.col-lg-8   -->           
 				<div class="col-lg-4">
-					<div class="panel panel_communications">
+				<?php
+										foreach ($announcement as $object ) {
+											
+											$title1= $object->Topic;
+											$img=$object->photo_url;
+											$title= substr($title1, 0, 35);
+											$id=$object->Blog_topic_id;
+											$details= $object->details;
+											$topic= anchor('home/single_events/'.$id.'/',''.$title.'');
+											$readmore=anchor('home/single_events/'.$id.'/','Read More',array('style'=>'color:green'));
+										
+										  
+										  $string = strip_tags($details);
+
+									if (strlen($string) > 100) {
+
+										// truncate string
+										$stringCut = substr($string, 0, 99);
+
+										// make sure it ends in a word so assassinate doesn't become ass...
+										$string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
+									} 		
+										?>
+					<div class="panel panel_communications" style="background: url('https://storage.googleapis.com/emomentum_announcements/<?php echo $img;?>') no-repeat center center;
+    			 	-webkit-background-size: cover;
+                    -moz-background-size: cover;
+					-o-background-size: cover;
+					background-size: cover;">
                         <div class="panel-heading pull-right heading-communications">
                             Announcements<span class = "direction-arrow">></span>
                         </div>
                         <div class = "announcement" style = "padding:15px;position:absolute;bottom:0px">
-													 <?php
-													 $counter = 0;
-									
-								foreach ($announcement as $notice ) {
-									$counter++;
-									$type=1;
-									$title1= $notice->Topic;
-									$title= substr($title1, 0, 35);
-									$id=$notice->Blog_topic_id;
-									$details= $notice->details;
-									$topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');		
-									$readmore=anchor('home/single_events/'.$id.'/'.$type.'','Read More',array('style'=>'color:green'));
-								
-
-							$string = strip_tags($details);
-
-							if (strlen($string) > 100) {
-
-								// truncate string
-								$stringCut = substr($string, 0, 99);
-
-								// make sure it ends in a word so assassinate doesn't become ass...
-								$string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
-							}  	
-								?>
-								
-								<p style = "font-weight: 600;font-size: 18px;text-decoration: none;color: #fff;"><?=$topic?></p>
-								<p><?=$string?></p>
+													 								
+								<p style = "font-weight: 600;font-size: 18px;text-decoration: none;color: #fff;"><? echo $topic; ?></p>
+								<p><? echo $string; ?></p>
 								<?php
-								if($counter == 1){
-									break;
-								}
-								}
-								?>
-						
+									}
+										?>						
 					</div>
                     </div><!-- /.panel -->
 				</div><!-- /.col-lg-4 -->
 			</div>
 			<div class="row">
     			<div class="col-lg-4">
-    			 	<div class="panel panel_upcoming panel_row1">
+    			 	<div class="panel panel_upcoming " style=" min-height: 365px;">
                         <div class="panel-heading pull-right heading-upcoming">
                             Upcoming Events
                         </div>
-                        <div class = "communications" style = "padding:15px;position:absolute;bottom:0px">
+                        <div class = "communications panel_row1" style = "padding:15px;position:absolute;bottom:0px">
                          <?php
 		
 		
@@ -309,12 +348,12 @@
 				</div><!-- /.col-lg-4 -->
 								<div class="col-lg-4">
                 
-					<div class="panel panel_row1" style = "border:0px;">
+					<div class="panel" style = "border:0px;">
                         <div class = "innovate">
                         <div class="panel-heading pull-center heading-processes">
                             Innovate
                         </div>   
-                        <div style = "font-weight: 600;" class = "innovate-list ">
+                        <div style = "font-weight: 600;min-height:316px;" class = "innovate-list panel_row1">
                         <?php foreach ($newsandevents as $key): 
                    
                         		$type = 2;

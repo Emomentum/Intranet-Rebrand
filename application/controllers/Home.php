@@ -12,10 +12,11 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model('Home_model');		
-		$data['announcement']=$this->Home_model->getUpcomingEventNews($type=1);
+		$this->load->model('Home_model');	
+		$this->load->model('Blog_model');	
+		$data['announcement']=$this->Blog_model->getAnnouncement();
 		$data['newsandevents']=$this->Home_model->getUpcomingEventNews($type=2);
-		$data['noticeboard']=$this->Home_model->getAllUpcomingEventNews($type=5);
+		$data['noticeboard']=$this->Blog_model->getTopicDescription();
 		$data['upcoming']=$this->Home_model->eventNews($type=4);
 		$this->load->view('home',$data);
 		
