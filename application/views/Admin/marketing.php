@@ -6,8 +6,8 @@
 <?php $this->load->view('Admin/includes/header');?>
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/metabucket6.config.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/metabucket6.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>AdminAssets/js/metabucket6.config.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>AdminAssets/js/metabucket6.js"></script>
 </head>
 <body>
     <div id="wrapper">
