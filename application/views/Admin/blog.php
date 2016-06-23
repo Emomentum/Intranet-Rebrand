@@ -19,10 +19,35 @@
 		<?php
 			
 			$useremail =  $this->session->userdata('email');
-						  
-			if ($useremail == 'nicola.mutungi@emomentum-interactive.com' || $useremail == 'benson.murage@emomentum-interactive.com' || 'test@emomentum-interactive.com' || $useremail == 'grace.mureithi@emomentum-interactive.com' || $useremail == 'kingsley.amaitsa@emomentum-interactive.com' || $useremail == 'david.odhiambo@emomentum-interactive.com' || $useremail == 'bryan.murithi@emomentum-interactive.com'){
-					?>
-
+			$permissions = array('nicola.mutungi@emomentum-interactive.com',
+								 'benson.murage@emomentum-interactive.com',
+								 'test@emomentum-interactive.com',
+								 'grace.mureithi@emomentum-interactive.com',
+								 'kingsley.amaitsa@emomentum-interactive.com',
+								 'david.odhiambo@emomentum-interactive.com',
+								 'bryan.murithi@emomentum-interactive.com'				
+								);
+			$currentuser =array();
+			foreach ($permissions as $row1){
+				if($useremail == $row1)
+				{
+					array_push($currentuser,$row1);
+				}
+			}
+			foreach ($currentuser as $row2){
+				if(!empty($currentuser) == FALSE){
+					
+										?>
+									
+				<div class="row"> 
+					<div class="col-lg-12">
+					<p>You do not have permissions to access this page</p>
+					</div>
+				</div>
+		<?php
+				}
+		else{
+			?>
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="page-header" style = "color:#ec971f">Notice Board</h2>
@@ -163,17 +188,10 @@
             </div>
             <!-- /.row -->
 		<?php
+		}
 			}
-			else{
-				?>
-				<div class="row"> 
-					<div class="col-lg-12">
-					<p>You do not have permissions to access this page</p>
-					</div>
-				</div>
-		<?php
-			}
-		?>
+						  
+	?>
         </div>
         <!-- /#page-wrapper -->
 

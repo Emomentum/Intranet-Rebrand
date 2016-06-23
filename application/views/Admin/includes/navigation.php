@@ -17,10 +17,6 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
                         <li class="divider"></li>
                         <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
@@ -51,7 +47,7 @@
 						   if ($useremail == 'eugene.aiko@emomentum-interactive.com'){
 							  $this->load->view('Admin/includes/hr_nav');
 						    }
-							elseif ($useremail == 'nicola.mutungi@emomentum-interactive.com' || $useremail == 'benson.murage@emomentum-interactive.com'){
+							elseif ($useremail == 'nicola.mutungi@emomentum-interactive.com' || $useremail == 'benson.murage@emomentum-interactive.com' || $useremail == 'martin.kamunyu@emomentum-interactive.com' || $useremail == 'dalphine.wanjiru@emomentum-interactive.com' ){
 							$this->load->view('Admin/includes/marketing_nav');
 						    }
 							elseif ($useremail == 'sylvin.wangui@emomentum-interactive.com'){ 
@@ -80,7 +76,7 @@
 								$this->load->view('Admin/includes/risk_nav');
 
 							}
-							elseif($useremail ==  'alex.mungai@emomentum-interactive.com' || $useremail == 'grace.mureithi@emomentum-interactive.com' || $useremail == 'kingsley.amaitsa@emomentum-interactive.com' || $useremail == 'david.odhiambo@emomentum-interactive.com' || $useremail == 'bryan.murithi@emomentum-interactive.com'){
+							elseif($useremail ==  'leace.mutisya@emomentum-interactive.com' || $useremail ==  'loise.mwende@emomentum-interactive.com' || $useremail ==  'alex.mungai@emomentum-interactive.com' || $useremail == 'grace.mureithi@emomentum-interactive.com' || $useremail == 'kingsley.amaitsa@emomentum-interactive.com' || $useremail == 'david.odhiambo@emomentum-interactive.com' || $useremail == 'morrris.murega@emomentum-interactive.com'){
 								 
 								 $this->load->view('Admin/includes/admin_nav');	   
 				

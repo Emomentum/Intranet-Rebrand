@@ -81,7 +81,7 @@ $(function() {
        									   		var document_name = folderdata[i].name.replace(folderdata[0].name, "");
        									   		//document_name = document_name.replace("/", "");
 												if(document_name.indexOf("/")== -1){
-													document_list.innerHTML = document_list.innerHTML + '<li class="list-group-item"><a style = "color:#000;padding:0px;"href = "https://storage.googleapis.com/emomentum_projects_and_consultancy/'+folderdata[0].name+document_name+'">'+document_name+'</a></li>';
+													document_list.innerHTML = document_list.innerHTML + '<li class="list-group-item"><a target = "_blank" style = "color:#000;padding:0px;"href = "https://docs.google.com/gview?url=https://storage.googleapis.com/emomentum_projects_and_consultancy/'+folderdata[0].name+document_name+'&embedded=true">'+document_name+'</a></li>';
 												}
 												else{
 													$.ajax({

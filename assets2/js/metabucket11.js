@@ -79,7 +79,7 @@ $(function() {
        									   		
        									   		var document_name = folderdata[i].name.replace(folderdata[0].name, "");
        									   		document_name = document_name.replace("/", "");
-       									   		document_list.innerHTML = document_list.innerHTML + '<li class="list-group-item"><a style = "color:#000;padding:0px;"href = "https://storage.googleapis.com/emomentum_sales/'+folderdata[0].name+document_name+'">'+document_name+'</a></li>';
+       									   		document_list.innerHTML = document_list.innerHTML + '<li class="list-group-item"><a target = "_blank" style = "color:#000;padding:0px;"href = "https://docs.google.com/gview?url=https://storage.googleapis.com/emomentum_sales/'+folderdata[0].name+document_name+'&embedded=true">'+document_name+'</a></li>';
        									   	}
        									   album.innerHTML = album.innerHTML + '</ul></div></div>';
        									   }
