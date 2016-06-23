@@ -303,7 +303,7 @@
                         <div class="panel-heading pull-right heading-upcoming">
                             Upcoming Events
                         </div>
-                        <div class = "communications panel_row1" style = "padding:15px;position:absolute;bottom:0px">
+                        <div class = "communications panel_row" style = "padding:15px;position:absolute;bottom:0px">
                          <?php
 		
 		
