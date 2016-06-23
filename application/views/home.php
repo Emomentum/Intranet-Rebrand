@@ -163,7 +163,7 @@
 					-o-background-size: cover;
 					background-size: cover;">
                         <div class="panel-heading pull-right heading-announcement">
-                            Notice Board <span class = "direction-arrow">></span>
+                            Notice Board <!-- <span class = "direction-arrow">></span> -->
                         </div><!-- List group -->
 						<!-- 	<ul class="list-group">
 								<li class="list-group-item"></li> 
@@ -284,7 +284,7 @@
 					-o-background-size: cover;
 					background-size: cover;">
                         <div class="panel-heading pull-right heading-communications">
-                            Announcements<span class = "direction-arrow">></span>
+                            Announcements<!-- <span class = "direction-arrow">></span> -->
                         </div>
                         <div class = "announcement" style = "padding:15px;position:absolute;bottom:0px">
 													 								
